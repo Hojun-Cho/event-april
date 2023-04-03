@@ -1,19 +1,17 @@
+import requests
 import json
-import typing
-import urllib.error
-import urllib.parse
-import urllib.request
-from urllib.parse import urlencode
-from urllib.request import Request, urlopen
 
-def invoke(name):
-    url = "https://pokeapi.co/api/v2/ability/"+str(name) +"/"
-    request = urllib.request.Request(url)
+def fuck(name):
+    url = f"https://pokeapi.co/api/v2/pokemon/{name}/"
+    r = requests.get(url)
+    return json.loads(r.text)
 
-    request.add_header('User-Agent',"chojasdf")
+sex = input('Enter the name of a Pokemon: ').lower()
 
-    data = urllib.request.urlopen(request).read()
-    return data
+print('Name:', sex.capitalize())
+print(f'Abilities:')
 
-result1 = invoke(input())
-print(result1)
+for dick in fuck(sex)['abilities']:
+    seokyeol = dick['ability']['name'].capitalize()
+    print(f'- {seokyeol}')
+
