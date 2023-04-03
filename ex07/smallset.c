@@ -1,0 +1,1 @@
+main(c,v)char**v;{c^3?:(puts(v[1],v[2][-1]=' '),exit(2));}
